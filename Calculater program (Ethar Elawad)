@@ -1,0 +1,76 @@
+#include <iostream>
+#include <cassert>
+using namespace std;
+
+// Functions
+double add(double a, double b) {
+    return a + b;
+}
+
+double subtract(double a, double b) {
+    return a - b;
+}
+
+double multiply(double a, double b) {
+    return a * b;
+}
+
+double divide(double a, double b) {
+    if (b == 0) {
+        cout << "Error: Cannot divide by zero!" << endl;
+        return 0; // قيمة افتراضية عند القسمة على صفر
+    }
+    return a / b;
+}
+
+// Unit Tests
+void runTests() {
+    assert(add(1, 3) == 4);
+    assert(subtract(8, 3) == 5);
+    assert(multiply(3, 3) == 9);
+    assert(divide(12, 6) == 2);
+
+    cout << "All unit tests passed successfully!\n";
+}
+
+int main() {
+    // Run UnitTest
+    runTests();
+
+    int choice;
+    double num1, num2;
+
+    cout << "\nSelect an operation:\n";
+    cout << "1 - Addition\n";
+    cout << "2 - Subtraction\n";
+    cout << "3 - Multiplication\n";
+    cout << "4 - Division\n";
+    cout << "Enter your choice (1/2/3/4): ";
+    cin >> choice;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    // Switch Cases
+    switch(choice) {
+        case 1:
+            cout << "Result = " << add(num1, num2) << endl;
+            break;
+        case 2:
+            cout << "Result = " << subtract(num1, num2) << endl;
+            break;
+        case 3:
+            cout << "Result = " << multiply(num1, num2) << endl;
+            break;
+        case 4:
+            cout << "Result = " << divide(num1, num2) << endl;
+            break;
+        default:
+            cout << "Invalid choice!" << endl;
+    }
+
+    return 0;
+}
