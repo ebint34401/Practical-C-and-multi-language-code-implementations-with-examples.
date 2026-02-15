@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
+// code implementations with runnable examples.
 
 // Functions
 double add(double a, double b) {
